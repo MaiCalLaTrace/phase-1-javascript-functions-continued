@@ -10,26 +10,10 @@ function mondayWork(fun = "go to the office"){
 mondayWork();
 mondayWork("work from home");
 
-function wrapAdjective() {
-    const part1 = "You are";
-    return function () {
-        const part2 = "a hard worker"
-        return function(){
-        console.log(`${part1} ${part2}!`);
-      };
-    };
+function wrapAdjective(part1){
+  return function (part2){
+    return `You are ${part1}${part2}${part1}!`
+  }
 }
-  
-  wrapAdjective()()();
-
-  function wrapAdjective() {
-    const part1 = "You are";
-    return function () {
-        const part2 = "a dedicated worker."
-        return function(){
-        console.log(`${part1} ${part2}!`);
-      };
-    };
-}
-  
-  wrapAdjective()()();
+wrapAdjective('*')
+wrapAdjective('||')
